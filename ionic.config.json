@@ -1,5 +1,7 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
+  "name": "AdivinaNumero",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
