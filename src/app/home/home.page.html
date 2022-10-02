@@ -22,17 +22,17 @@
       <ion-label>Añade el número </ion-label>
 
       <ion-input min="1" max="100" type="number" [(ngModel)]="num" placeholder="Numero"></ion-input>
-      <ion-button expand="full" (click)="comprobacionNumero()">Adivina</ion-button>
+      <ion-button expand="full" (click)="comprobacionNumero()">Acierta</ion-button>
 
     </ion-item>
-    <ion-label> El número secreto es {{mayorMenor}} {{num}}</ion-label>
-    <ion-card *ngIf="mayorMenor==''">
+    <ion-label> El número secreto es {{menorMayor}} {{num}}</ion-label>
+    <ion-card *ngIf="menorMayor==''">
       <ion-card-header>
-        ¡¡¡Enhorabuena!!!
+        ¡¡¡Felicidades, has acertado!!!
       </ion-card-header>
       <ion-card-content>
-        Has acertado, el número secreto es el {{ num }}
-        <ion-button *ngIf="mayorMenor==''" expand="block" (click)="reinicia()">Volver a Jugar</ion-button>
+       El número secreto era {{ num }}, enhorabuena. ¿Quieres volver a jugar?
+        <ion-button *ngIf="menorMayor==''" expand="block" (click)="reinicia()">Volver a Jugar</ion-button>
       </ion-card-content>
     </ion-card>
   </ion-card>

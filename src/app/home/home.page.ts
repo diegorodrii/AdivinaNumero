@@ -11,29 +11,29 @@ export class HomePage {
     return Math.round(Math.random() * (b - a));
   }
   num: number;
-  numSecret: number = this.numAleatorio(0, 100);
-  mayorMenor= "...";
+  numeroSecreto: number = this.numAleatorio(0, 100);
+  menorMayor= "...";
 
   constructor() { }
 
 
   comprobacionNumero() {
     if (this.num) {
-      if (this.numSecret < this.num) {
-        this.mayorMenor = 'menor que';
+      if (this.numeroSecreto < this.num) {
+        this.menorMayor = 'menor que';
       }
-      else if (this.numSecret > this.num) {
-        this.mayorMenor = 'mayor que';
+      else if (this.numeroSecreto > this.num) {
+        this.menorMayor = 'mayor que';
       }
       else {
-        this.mayorMenor = '';
+        this.menorMayor = '';
       }
     }
   }
   reinicia(){
     // reiniciamos las variables
     this.num = null;
-    this.mayorMenor = '...';
-    this.numSecret = this.numAleatorio(0,100);
+    this.menorMayor= '...';
+    this.numeroSecreto = this.numAleatorio(0,100);
   }
 }
