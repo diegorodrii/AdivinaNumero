@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Numero Aleatorio
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,33 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Numero Aleatorio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  
+  <ion-card>
+    <img src="../../assets/Números-aleatorios.png" />
+    <ion-card-header>
+      <ion-card-title>Adivina el número que se ha generado aleatoriamente entre el 0 y el 100 </ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-label>Añade el número </ion-label>
+
+      <ion-input min="1" max="100" type="number" [(ngModel)]="num" placeholder="Numero"></ion-input>
+      <ion-button expand="full" (click)="comprobacionNumero()">Adivina</ion-button>
+
+    </ion-item>
+    <ion-label> El número secreto es {{mayorMenor}} {{num}}</ion-label>
+    <ion-card *ngIf="mayorMenor==''">
+      <ion-card-header>
+        ¡¡¡Enhorabuena!!!
+      </ion-card-header>
+      <ion-card-content>
+        Has acertado, el número secreto es el {{ num }}
+        <ion-button *ngIf="mayorMenor==''" expand="block" (click)="reinicia()">Volver a Jugar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+
+
 </ion-content>
