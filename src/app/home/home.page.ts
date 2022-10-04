@@ -18,7 +18,7 @@ export class HomePage {
 
 
   comprobacionNumero() {
-    if (this.num) {
+ 
       if (this.numeroSecreto < this.num) {
         this.menorMayor = 'menor que';
       }
@@ -29,7 +29,7 @@ export class HomePage {
         this.menorMayor = '';
       }
     }
-  }
+  
   reinicia(){
     // reiniciamos las variables
     this.num = null;

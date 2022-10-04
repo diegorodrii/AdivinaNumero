@@ -20,8 +20,9 @@
     </ion-card-header>
     <ion-item>
       <ion-label>Añade el número </ion-label>
+      <ion-input (keyup.enter)="comprobacionNumero()" min="1" max="100" type="number" [(ngModel)]="num"
+        placeholder="Numero"></ion-input>
 
-      <ion-input min="1" max="100" type="number" [(ngModel)]="num" placeholder="Numero"></ion-input>
       <ion-button expand="full" (click)="comprobacionNumero()">Acierta</ion-button>
 
     </ion-item>
@@ -31,7 +32,7 @@
         ¡¡¡Felicidades, has acertado!!!
       </ion-card-header>
       <ion-card-content>
-       El número secreto era {{ num }}, enhorabuena. ¿Quieres volver a jugar?
+        El número secreto era {{ num }}, enhorabuena. ¿Quieres volver a jugar?
         <ion-button *ngIf="menorMayor==''" expand="block" (click)="reinicia()">Volver a Jugar</ion-button>
       </ion-card-content>
     </ion-card>
