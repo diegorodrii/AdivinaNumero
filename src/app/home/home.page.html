@@ -14,7 +14,7 @@
   </ion-header>
 
   <ion-card>
-    <img src="../../assets/Números-aleatorios.png" />
+    <img src="../../assets/guess.png" />
     <ion-card-header>
       <ion-card-title>Adivina el número que se ha generado aleatoriamente entre el 0 y el 100 </ion-card-title>
     </ion-card-header>
@@ -26,7 +26,12 @@
       <ion-button expand="full" (click)="comprobacionNumero()">Acierta</ion-button>
 
     </ion-item>
-    <ion-label> El número secreto es {{menorMayor}} {{num}}</ion-label>
+    <ion-label class="frase"> El número secreto es {{menorMayor}} {{num}}</ion-label><br>
+
+    <ion-label> Tus intentos: {{intentos}}</ion-label> <br>
+
+    <ion-label>{{intentos}}Historial de intentos: {{arrayIntentos}}{{arrayNum}}<br></ion-label>
+
     <ion-card *ngIf="menorMayor==''">
       <ion-card-header>
         ¡¡¡Felicidades, has acertado!!!

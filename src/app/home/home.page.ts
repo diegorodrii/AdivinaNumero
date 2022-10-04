@@ -13,9 +13,10 @@ export class HomePage {
   num: number;
   numeroSecreto: number = this.numAleatorio(0, 100);
   menorMayor= "...";
-
+  intentos: number = 0;
   constructor() { }
-
+  arrayIntentos:number[]=[];
+  arrayNum:number[]=[];
 
   comprobacionNumero() {
  
@@ -28,6 +29,9 @@ export class HomePage {
       else {
         this.menorMayor = '';
       }
+      this.intentos++;
+      this.arrayNum[this.intentos]=this.num;
+      this.arrayIntentos[this.intentos]=this.intentos;
     }
   
   reinicia(){
@@ -35,5 +39,7 @@ export class HomePage {
     this.num = null;
     this.menorMayor= '...';
     this.numeroSecreto = this.numAleatorio(0,100);
+    this.intentos = 0;
+    this.arrayNum = null;
   }
 }
