@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>
+  <ion-card [ngClass]="{'primary' : aciertaNum}">
     <img src="../../assets/guess.png" />
     <ion-card-header>
       <ion-card-title>Adivina el número que se ha generado aleatoriamente entre el 0 y el 100 </ion-card-title>
@@ -54,7 +54,7 @@
     <!-- 
     <ion-label>{{intentos}}Historial de intentos:{{arrayIntentos}}{{arrayNum}}<br></ion-label> -->
 
-    <ion-card *ngIf="menorMayor==''">
+  <ion-card *ngIf="menorMayor==''" [ngStyle]="{'background-color':'green'}">
       <ion-card-header>
         ¡¡¡Felicidades, has acertado!!!
       </ion-card-header>
