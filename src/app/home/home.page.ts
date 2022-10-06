@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
 
+interface Number{
+  num:number;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
+
 
   numAleatorio(a, b): number {
     return Math.round(Math.random() * (b - a));
@@ -14,12 +20,18 @@ export class HomePage {
   numeroSecreto: number = this.numAleatorio(0, 100);
   menorMayor= "...";
   intentos: number = 0;
+
+  array:Number []= [];
   constructor() { }
-  arrayIntentos:number[]=[];
-  arrayNum:number[]=[];
+  
+  history(_num){
+    this.array.push(_num);
+  }
+  
 
   comprobacionNumero() {
  
+
       if (this.numeroSecreto < this.num) {
         this.menorMayor = 'menor que';
       }
@@ -30,16 +42,15 @@ export class HomePage {
         this.menorMayor = '';
       }
       this.intentos++;
-      this.arrayNum[this.intentos]=this.num;
-      this.arrayIntentos[this.intentos]=this.intentos;
+
     }
   
   reinicia(){
-    // reiniciamos las variables
     this.num = null;
     this.menorMayor= '...';
     this.numeroSecreto = this.numAleatorio(0,100);
     this.intentos = 0;
-    this.arrayNum = null;
+
+
   }
 }

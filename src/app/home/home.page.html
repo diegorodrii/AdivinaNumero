@@ -23,14 +23,36 @@
       <ion-input (keyup.enter)="comprobacionNumero()" min="1" max="100" type="number" [(ngModel)]="num"
         placeholder="Numero"></ion-input>
 
-      <ion-button expand="full" (click)="comprobacionNumero()">Acierta</ion-button>
-
+      <ion-button expand="full" (click)="comprobacionNumero()" (click)="history(num)">Acierta</ion-button>
+      <ion-label> {{array}}</ion-label>
     </ion-item>
     <ion-label class="frase"> El número secreto es {{menorMayor}} {{num}}</ion-label><br>
 
-    <ion-label> Tus intentos: {{intentos}}</ion-label> <br>
+    <!-- <ion-label appHighlight> Tus intentos: {{intentos}}
+      <ion-row>
+        <ion-col m="12">
+          {{intentos}}
+        </ion-col>
+        <ion-col m="12">
+          {{arrayNum}}
+        </ion-col>
+      </ion-row>
+    </ion-label> <br> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label class="frase"> El número secreto es {{menorMayor}} {{num}}</ion-label><br>
+        </ion-col>
+        <ion-col>
+          <ion-label appHighlight="yellow"> Tus intentos: {{intentos}}</ion-label> <br>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    <ion-label>{{intentos}}Historial de intentos: {{arrayIntentos}}{{arrayNum}}<br></ion-label>
+ 
+
+    <!-- 
+    <ion-label>{{intentos}}Historial de intentos:{{arrayIntentos}}{{arrayNum}}<br></ion-label> -->
 
     <ion-card *ngIf="menorMayor==''">
       <ion-card-header>
