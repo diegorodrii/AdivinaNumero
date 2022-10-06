@@ -53,7 +53,7 @@ export class HomePage {
     this.menorMayor = '...';
     this.numeroSecreto = this.numAleatorio(0, 100);
     this.intentos = 0;
-
+    this.aciertaNum = false;
     
   }
   cambiaColor(){
